@@ -1,0 +1,51 @@
+@media (min-width: 1400px) {
+  .home {
+    &__heading {
+      font-size: 5.5rem;
+    }
+
+    &__description {
+      font-size: 2.3rem;
+    }
+
+    &__btn {
+      padding: 0.7em 2.2em;
+    }
+
+    &__media {
+      padding: 3.5em;
+
+      .btnLamp,
+      &__socials {
+        margin: 0 2em;
+      }
+    }
+  }
+}
+
+@media (min-width: 2000px) {
+  .home {
+    &__heading {
+      font-size: 5.5vh;
+    }
+
+    &__description {
+      font-size: 2.3vh;
+    }
+
+    &__btn {
+      font-size: 1.8vh;
+    }
+    &__media {
+      &__socials {
+        .fa {
+          &-github,
+          &-instagram,
+          &-linkedin {
+            font-size: 2.9vh;
+          }
+        }
+      }
+    }
+  }
+}

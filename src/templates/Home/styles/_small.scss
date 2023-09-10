@@ -1,0 +1,16 @@
+@media (min-width: 656px) {
+  .home {
+    &__heading {
+      width: 500px;
+      font-size: 4.9rem;
+    }
+
+    &__description {
+      font-size: 2rem;
+    }
+
+    &__btn {
+      padding: 0.8em 2.3em;
+    }
+  }
+}

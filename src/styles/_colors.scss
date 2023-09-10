@@ -1,0 +1,30 @@
+$grey: #303030;
+$bgc-color: #0b1523;
+$grey-darker: #1a1b1e;
+$darkBlue: #1c2431;
+$test: #13243c;
+
+$cyan: #00c9c8;
+$cyan-power: #00e3ff;
+$cyan-lighter: #bffcf9;
+$green: #47817f;
+$success: #00ff00;
+$error: #f71919;
+$creame: #d8e2e0;
+$paragraf-color: #b4b4b4;
+
+$alpha-gradient-top: linear-gradient(
+  180deg,
+  rgba(0, 0, 0, 1) 40%,
+  rgba(0, 0, 0, 0) 100%
+);
+$alpha-gradient-bot: linear-gradient(
+  180deg,
+  rgba(0, 0, 0, 0) 40%,
+  rgba(0, 0, 0, 1) 100%
+);
+$cyan-gradient: linear-gradient(
+  90deg,
+  rgb(0, 201, 200) 40%,
+  rgb(33, 206, 218) 100%
+);

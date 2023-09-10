@@ -1,0 +1,149 @@
+@import "~/styles/colors";
+
+.home {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  .gradient-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: $alpha-gradient-top;
+  }
+
+  .gradient-bot {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: $alpha-gradient-bot;
+  }
+
+  &__content {
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+  }
+
+  &__heading {
+    width: 300px;
+    font-family: "Big Shoulders Stencil Display", serif;
+    font-size: 3.8rem;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  &__description {
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+    color: $cyan;
+  }
+
+  &__btn {
+    padding: 0.5em 1.8em;
+    margin-top: 3em;
+    position: relative;
+    font-family: "Source Sans Pro", sans-serif;
+    color: #ffffff;
+    background-color: transparent;
+    border: 2px solid $cyan;
+    border-radius: 3px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: color 0.3s;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -1px;
+      width: 100%;
+      height: 104%;
+      background-color: $cyan;
+      transform: scaleX(0);
+      transition: transform 0.3s;
+      z-index: -1;
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+    }
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  &__media {
+    padding: 1.5em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    z-index: 97;
+
+    .fa-lightbulb {
+      margin: 0 0.4em;
+      width: 34px;
+      height: 34px;
+      filter: invert(95%) sepia(5%) saturate(252%) hue-rotate(118deg)
+        brightness(97%) contrast(88%);
+
+      &.active {
+        filter: invert(95%) sepia(99%) saturate(742%) hue-rotate(325deg)
+          brightness(105%) contrast(98%) drop-shadow(0 0 9px #fce76f);
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__socials {
+      display: flex;
+
+      .fa {
+        &-github,
+        &-instagram,
+        &-linkedin {
+          margin: 0 1.2em;
+          width: 34px;
+          height: 34px;
+          filter: invert(95%) sepia(5%) saturate(252%) hue-rotate(118deg)
+            brightness(97%) contrast(88%);
+          transition: filter 0.3s;
+
+          &:hover {
+            filter: invert(59%) sepia(28%) saturate(3929%) hue-rotate(138deg)
+              brightness(98%) contrast(103%);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+@import "./small.scss";
+@import "./desktop.scss";

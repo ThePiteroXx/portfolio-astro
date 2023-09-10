@@ -1,5 +1,6 @@
 import image from "@astrojs/image";
 import tailwind from "@astrojs/tailwind";
+import glslify from "vite-plugin-glslify";
 import { defineConfig } from "astro/config";
 
 // https://astro.build/config
@@ -12,6 +13,7 @@ export default defineConfig({
     }),
   ],
   vite: {
+    plugins: [glslify()],
     ssr: {
       external: ["svgo"],
     },
