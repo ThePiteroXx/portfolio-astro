@@ -68,8 +68,8 @@ export default class Baked {
         uNeutralMix: { value: 0 },
         uLightDeskStrength: { value: 1.9 },
       },
-      vertexShader,
-      fragmentShader,
+      vertexShader: vertexShader,
+      fragmentShader: fragmentShader,
     });
 
     this.model.materialLamp = new THREE.ShaderMaterial({
@@ -92,6 +92,7 @@ export default class Baked {
         _child.material = this.model.materialBaked;
       }
     });
+
     this.scene.add(this.model.baked, this.model.lampL, this.model.lamp);
   }
 

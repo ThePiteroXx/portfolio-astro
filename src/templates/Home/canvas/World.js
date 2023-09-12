@@ -7,13 +7,9 @@ import Home from "./Home.js";
 export default class World {
   constructor() {
     const home = new Home();
-    this.targetElement = home.targetElement;
     this.config = home.config;
     this.resources = home.resources;
-    this.debug = home.debug;
     this.scene = home.scene;
-    this.time = home.time;
-    this.camera = home.camera;
 
     this.resources.on("groupEnd", (_group) => {
       if (_group.name === "base") {

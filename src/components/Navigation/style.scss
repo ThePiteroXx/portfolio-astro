@@ -1,0 +1,160 @@
+@import "~/styles/colors";
+
+.nav-hamburger {
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  z-index: 99;
+
+  .ham {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .hamRotate.active {
+    transform: rotate(45deg);
+  }
+  .hamRotate180.active {
+    transform: rotate(180deg);
+  }
+
+  .line {
+    fill: none;
+    transition:
+      stroke-dasharray 400ms,
+      stroke-dashoffset 400ms;
+    stroke: rgb(255, 255, 255);
+    stroke-width: 5.5;
+    stroke-linecap: round;
+  }
+
+  .ham4 .top {
+    stroke-dasharray: 40 121;
+  }
+  .ham4 .bottom {
+    stroke-dasharray: 40 121;
+  }
+  .ham4.active .top {
+    stroke-dashoffset: -68px;
+  }
+  .ham4.active .bottom {
+    stroke-dashoffset: -68px;
+  }
+}
+
+.nav-desktop {
+  display: none;
+}
+
+.nav-mobile {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+  z-index: 98;
+
+  &.active {
+    transform: translateY(0);
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    list-style-type: none;
+
+    .navLi {
+      padding: 0.3em 3em;
+      margin: 0.3em;
+      display: flex;
+      justify-content: center;
+      font-family: "Playfair Display", sans-serif;
+      font-size: 2rem;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+
+      a {
+        color: $creame;
+        text-decoration: none;
+      }
+
+      &:hover {
+        background-color: $grey-darker;
+        cursor: pointer;
+      }
+    }
+
+    .active {
+      background-color: $grey-darker;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .nav-hamburger,
+  .nav-mobile {
+    display: none;
+  }
+
+  .nav-desktop {
+    margin-right: 3.5em;
+    position: fixed;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 30vw;
+    z-index: 99;
+
+    &-list {
+      margin-top: 4em;
+      display: flex;
+      justify-content: flex-end;
+      height: 100%;
+      width: 100%;
+      list-style-type: none;
+
+      .navLi {
+        margin: 0 1.3em 4em;
+        font-family: "Source Sans Pro", sans-serif;
+        font-weight: 600;
+        font-size: 1.7rem;
+        text-align: center;
+
+        .navLink {
+          color: $creame;
+          text-decoration: none;
+          transition: color 0.3s;
+
+          &:hover {
+            cursor: pointer;
+            color: $cyan-power;
+          }
+        }
+
+        .navLink.active {
+          color: $cyan;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 2000px) {
+  .nav-desktop {
+    &-list {
+      li {
+        font-size: 2vh;
+      }
+    }
+  }
+}

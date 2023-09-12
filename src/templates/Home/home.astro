@@ -1,4 +1,5 @@
 ---
+import Navigation from "~/components/Navigation/Navigation.astro";
 import lightBulbIcon from "~/assets/icons/lightbulb-icon.svg";
 import githubIcon from "~/assets/icons/github-icon.svg";
 import instagramIcon from "~/assets/icons/instagram-icon.svg";
@@ -10,59 +11,68 @@ import "./styles/style.scss";
 <script>
   import HomeCanvas from "./canvas/Home.js";
 
-  const homeCanvas = new HomeCanvas(document.querySelector(".canvas-home"));
+  let myReq: number;
 
-  const update = () => {
-    homeCanvas.update();
+  document.addEventListener("astro:page-load", () => {
+    if (window.location.pathname === "/") {
+      const homeCanvas = new HomeCanvas(document.querySelector(".canvas-home"));
 
-    window.requestAnimationFrame(() => {
+      const update = () => {
+        homeCanvas.update();
+        myReq = requestAnimationFrame(update);
+      };
       update();
-    });
-  };
+    }
+  });
 
-  update();
+  document.addEventListener("astro:after-swap", () => {
+    cancelAnimationFrame(myReq);
+  });
 </script>
 
-<section class="home" id="home">
-  <div class="gradient-top"></div>
-  <div class="home__content">
-    <h1 class="home__heading" data-heading="home">peter skubisz</h1>
-    <p class="home__description">Front-end developer</p>
-    <a href="#about" class="home__btn" data-href="about">About Me</a>
-  </div>
-
-  <canvas class="canvas-home"></canvas>
-  <div class="gradient-bot"></div>
-
-  <div class="home__media">
-    <div id="btnLamp">
-      <img src={lightBulbIcon.src} alt="" class="fas fa-lightbulb" />
+<Navigation />
+<main>
+  <section class="home" id="home">
+    <div class="gradient-top"></div>
+    <div class="home__content">
+      <h1 class="home__heading" data-heading="home">peter skubisz</h1>
+      <p class="home__description">Front-end developer</p>
+      <a href="#about" class="home__btn" data-href="about">About Me</a>
     </div>
 
-    <div class="home__media__socials">
-      <a href="https://github.com/ThePiteroXx" target="_blank" rel="noopener"
-        ><img src={githubIcon.src} alt="github" class="fab fa-github" /></a
-      >
-      <a
-        href="https://www.instagram.com/peterskubisz/"
-        target="_blank"
-        rel="noopener"
-        ><img
-          src={instagramIcon.src}
-          alt="instagram"
-          class="fab fa-instagram"
-        /></a
-      >
-      <a
-        href="https://www.linkedin.com/in/piotr-skubisz-89b89623b/"
-        target="_blank"
-        rel="noopener"
-        ><img
-          src={linkedinIcon.src}
-          alt="linkedin"
-          class="fab fa-linkedin"
-        /></a
-      >
+    <canvas class="canvas-home"></canvas>
+    <div class="gradient-bot"></div>
+
+    <div class="home__media">
+      <div id="btnLamp">
+        <img src={lightBulbIcon.src} alt="" class="fas fa-lightbulb" />
+      </div>
+
+      <div class="home__media__socials">
+        <a href="https://github.com/ThePiteroXx" target="_blank" rel="noopener"
+          ><img src={githubIcon.src} alt="github" class="fab fa-github" /></a
+        >
+        <a
+          href="https://www.instagram.com/peterskubisz/"
+          target="_blank"
+          rel="noopener"
+          ><img
+            src={instagramIcon.src}
+            alt="instagram"
+            class="fab fa-instagram"
+          /></a
+        >
+        <a
+          href="https://www.linkedin.com/in/piotr-skubisz-89b89623b/"
+          target="_blank"
+          rel="noopener"
+          ><img
+            src={linkedinIcon.src}
+            alt="linkedin"
+            class="fab fa-linkedin"
+          /></a
+        >
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>

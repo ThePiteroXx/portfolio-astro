@@ -14,7 +14,7 @@ export default class Home {
   static instance;
 
   constructor(targetElement) {
-    if (Home.instance) {
+    if (!targetElement && Home.instance) {
       return Home.instance;
     }
     Home.instance = this;
@@ -62,10 +62,6 @@ export default class Home {
     if (this.config.stats) {
       this.stats = new Stats(true);
     }
-  }
-
-  setContent() {
-    this.content = new Content();
   }
 
   update() {

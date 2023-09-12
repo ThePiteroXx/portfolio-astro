@@ -1,0 +1,54 @@
+---
+import "./style.scss";
+---
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const nav = document.querySelector(".navbar");
+    const navLinks = nav.querySelectorAll("a");
+    const currentUrl = window.location.href;
+    navLinks.forEach((link) => {
+      if (link.href === currentUrl) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+<div class="nav-hamburger">
+  <svg class="ham hamRotate ham4" viewBox="0 0 100 100" width="80" id="navBtn">
+    <path
+      class="line top"
+      d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"
+    ></path>
+    <path class="line middle" d="m 70,50 h -40"></path>
+    <path
+      class="line bottom"
+      d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"
+    ></path>
+  </svg>
+</div>
+
+<nav class="navbar">
+  <div class="nav-mobile" id="navMobile">
+    <ul class="nav-mobile-list">
+      <li class="navLi"><a href="/" class="navLink">Home</a></li>
+      <li class="navLi"><a href="/about" class="navLink">About Me</a></li>
+      <li class="navLi"><a href="/work" class="navLink">Work</a></li>
+      <li class="navLi">
+        <a href="/contact" class="navLink">Contact</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="nav-desktop">
+    <ul class="nav-desktop-list">
+      <li class="navLi"><a href="/" class="navLink">Home</a></li>
+      <li class="navLi"><a href="/about" class="navLink">About Me</a></li>
+      <li class="navLi"><a href="/work" class="navLink">Work</a></li>
+      <li class="navLi">
+        <a href="/contact" class="navLink">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>

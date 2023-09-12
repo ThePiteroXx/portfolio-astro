@@ -3,7 +3,7 @@ import "@fontsource-variable/inter";
 import "~/styles/index.scss";
 import { ViewTransitions } from "astro:transitions";
 
-import Home from "~/templates/Home/home.astro";
+import Navigation from "~/components/Navigation/Navigation.astro";
 
 const { generator, site } = Astro;
 const image = new URL("social.jpg", site);
@@ -34,6 +34,6 @@ const description =
   <body
     class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
-    <Home />
+    <Navigation />
   </body>
 </html>
