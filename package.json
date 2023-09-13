@@ -31,7 +31,10 @@
     "vite-plugin-glslify": "^2.0.2"
   },
   "dependencies": {
+    "@fontsource-variable/big-shoulders-stencil-display": "^5.0.12",
     "@fontsource-variable/inter": "^5.0.8",
+    "@fontsource-variable/playfair-display": "^5.0.13",
+    "@fontsource/source-sans-pro": "^5.0.8",
     "glsl-blend": "^1.0.3",
     "micromodal": "^0.4.10",
     "rxjs": "^7.8.1",

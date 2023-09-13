@@ -1,8 +1,7 @@
 ---
-import "@fontsource-variable/inter";
-import "~/styles/index.scss";
 import { ViewTransitions } from "astro:transitions";
 
+import GlobalStyles from "~/components/GlobalStyles.astro";
 import Home from "~/templates/Home/home.astro";
 
 const { generator, site } = Astro;
@@ -29,6 +28,7 @@ const description =
     <meta property="og:url" content={site} />
     <meta name="twitter:card" content="summary_large_image" />
 
+    <GlobalStyles />
     <ViewTransitions />
   </head>
   <body

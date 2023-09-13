@@ -38,7 +38,8 @@
 
   &__heading {
     width: 300px;
-    font-family: "Big Shoulders Stencil Display", serif;
+    font-family: "Big Shoulders Stencil Display Variable", sans-serif;
+    font-weight: 900;
     font-size: 3.8rem;
     color: #ffffff;
     text-align: center;
@@ -47,7 +48,7 @@
   }
 
   &__description {
-    font-family: "Playfair Display", serif;
+    font-family: "Playfair Display Variable", sans-serif;
     font-size: 1.8rem;
     color: $cyan;
   }

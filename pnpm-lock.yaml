@@ -5,7 +5,16 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@fontsource-variable/big-shoulders-stencil-display':
+    specifier: ^5.0.12
+    version: 5.0.12
   '@fontsource-variable/inter':
+    specifier: ^5.0.8
+    version: 5.0.8
+  '@fontsource-variable/playfair-display':
+    specifier: ^5.0.13
+    version: 5.0.13
+  '@fontsource/source-sans-pro':
     specifier: ^5.0.8
     version: 5.0.8
   glsl-blend:
@@ -843,8 +852,20 @@ packages:
     dev: true
     optional: true
 
+  /@fontsource-variable/big-shoulders-stencil-display@5.0.12:
+    resolution: {integrity: sha512-FOt0GH5BuEn5AmvcD7jq/QtA+3qhAGUtG1zhlaKu8gebyz0EYC0PSNNBR3qYNxAjRQd8tg+TNKUb6s2n9URzyg==}
+    dev: false
+
   /@fontsource-variable/inter@5.0.8:
     resolution: {integrity: sha512-WkYfFNccmEIeL2fNg0mYeLWqOoB7xD8MFxFRc4IwbSP2o8ZaBt36v5aW4by4MyrgGRMNk7uNi5LbvYKq6clPjw==}
+    dev: false
+
+  /@fontsource-variable/playfair-display@5.0.13:
+    resolution: {integrity: sha512-NVvUoXaaZbpmez1reyLl59PnieKmMbkyy2ClI0m7Rm6YUYPLadMmb8OzDwejQ+fv+FwHjqr/Tv6rtKY9lRk6sQ==}
+    dev: false
+
+  /@fontsource/source-sans-pro@5.0.8:
+    resolution: {integrity: sha512-5U2UvIYRkCMozZ388gCE73PEpa2MFgN/0t9O4a1FF7bGT/MIneQWSL1XpWZ8iMVYdh6ntxRf3iFA6slCIuFgkg==}
     dev: false
 
   /@isaacs/cliui@8.0.2:
