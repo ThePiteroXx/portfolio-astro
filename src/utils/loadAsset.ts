@@ -11,7 +11,7 @@ export const loadAsset = async (path: string) => {
   const gltfLoader = new GLTFLoader();
   gltfLoader.setDRACOLoader(dracoLoader);
 
-  const extensionMatch = path.match(/\.([a-z]+)$/);
+  const extensionMatch = path.match(/\.([0-9a-z]+)(?:[\?#]|$)/i);
 
   if (!extensionMatch) {
     console.warn(`Cannot found extension of ${path}`);
