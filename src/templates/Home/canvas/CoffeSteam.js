@@ -34,7 +34,7 @@ export default class CoffeSteam {
     });
 
     // Mesh
-    this.model.mesh = this.resources.items.coffeSteam.scene.children[0];
+    this.model.mesh = this.resources.coffeSteam.scene.children[0].clone();
     this.model.mesh.material = this.model.material;
     this.scene.add(this.model.mesh);
   }

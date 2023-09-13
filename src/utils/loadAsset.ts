@@ -1,12 +1,9 @@
 import * as THREE from "three";
 
-import { GLTF, GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 
-export const loadAsset = (
-  path: string,
-  callback: (item: GLTF | THREE.Texture) => void,
-) => {
+export const loadAsset = async (path: string) => {
   const dracoLoader = new DRACOLoader();
   dracoLoader.setDecoderPath("draco/");
   dracoLoader.setDecoderConfig({ type: "js" });
@@ -25,17 +22,15 @@ export const loadAsset = (
     const extension = extensionMatch[1];
 
     if (extension === "jpg" || extension === "png") {
-      new THREE.TextureLoader().load(path, (texture) => {
-        texture.needsUpdate = true;
-        callback(texture);
-      });
-      return;
+      const texture = await new THREE.TextureLoader().loadAsync(path);
+      texture.needsUpdate = true;
+      return texture;
     }
 
     if (extension === "glb") {
-      gltfLoader.load(path, (data) => {
-        callback(data);
-      });
+      const gltf = await gltfLoader.loadAsync(path);
+
+      return gltf;
     }
   }
 };

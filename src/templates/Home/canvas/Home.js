@@ -2,7 +2,7 @@ import * as THREE from "three";
 
 import Time from "~/utils/Time.js";
 import Stats from "~/utils/Stats.js";
-import Resources from "~/utils/Resources/Resources.js";
+import { getResources } from "~/store/resources.ts";
 
 import Sizes from "./Sizes.js";
 import Renderer from "./Renderer.js";
@@ -26,12 +26,14 @@ export default class Home {
       return;
     }
 
+    this.resources = getResources();
+    if (!this.resources) throw Error("First, you need set up the resources");
+
     this.time = new Time();
     this.sizes = new Sizes(this.targetElement);
     this.setConfig();
     this.setStats();
     this.scene = new THREE.Scene();
-    this.resources = new Resources();
     this.camera = new Camera();
     this.renderer = new Renderer();
     this.world = new World();
@@ -89,5 +91,12 @@ export default class Home {
     if (this.world) this.world.resize();
   }
 
-  destroy() {}
+  destroy() {
+    this.time.stop();
+    this.renderer.destroy();
+    this.world.destroy();
+    this.scene = null;
+    this.config = null;
+    this.stats = null;
+  }
 }

@@ -34,20 +34,26 @@ export default class Baked {
 
   setModel() {
     this.model = {};
+    this.model.lampL = this.resources.deskModel.scene
+      .getObjectByName("lampL")
+      .clone();
 
-    this.model.lampL = this.resources.items.deskModel.scene.children[0];
-    this.model.baked = this.resources.items.deskModel.scene.children[1];
-    this.model.lamp = this.resources.items.deskModel.scene.children[2];
+    this.model.baked = this.resources.deskModel.scene
+      .getObjectByName("baked")
+      .clone();
+    this.model.lamp = this.resources.deskModel.scene
+      .getObjectByName("lampBaked")
+      .clone();
 
-    this.model.bakedTexture = this.resources.items.baked;
+    this.model.bakedTexture = this.resources.baked;
     this.model.bakedTexture.encoding = THREE.sRGBEncoding;
     this.model.bakedTexture.flipY = false;
 
-    this.model.bakedDarkTexture = this.resources.items.darkbaked;
+    this.model.bakedDarkTexture = this.resources.darkbaked;
     this.model.bakedDarkTexture.encoding = THREE.sRGBEncoding;
     this.model.bakedDarkTexture.flipY = false;
 
-    this.model.bakedLedTexture = this.resources.items.ledbaked;
+    this.model.bakedLedTexture = this.resources.ledBaked;
     this.model.bakedLedTexture.encoding = THREE.sRGBEncoding;
     this.model.bakedLedTexture.flipY = false;
 

@@ -1,4 +1,5 @@
 import * as THREE from "three";
+
 import Baked from "./Baked.js";
 import Screen from "./Screen.js";
 import CoffeSteam from "./CoffeSteam.js";
@@ -11,13 +12,9 @@ export default class World {
     this.resources = home.resources;
     this.scene = home.scene;
 
-    this.resources.on("groupEnd", (_group) => {
-      if (_group.name === "base") {
-        this.setBaked();
-        this.setScreens();
-        this.setCoffeSteam();
-      }
-    });
+    this.setBaked();
+    this.setScreens();
+    this.setCoffeSteam();
   }
 
   setBaked() {
@@ -26,24 +23,24 @@ export default class World {
 
   setScreens() {
     this.mainMonitor = new Screen(
-      this.resources.items.mainMonitor.scene.children[0],
+      this.resources.mainMonitor.scene.children[0].clone(),
       "videos/videoCoding.mp4",
     );
 
     this.laptopMonitor = new Screen(
-      this.resources.items.laptopMonitor.scene.children[0],
+      this.resources.laptopMonitor.scene.children[0].clone(),
       "videos/videoYt.mp4",
     );
 
-    this.leftMonitor = this.resources.items.leftMonitor.scene.children[0];
+    this.leftMonitor = this.resources.leftMonitor.scene.children[0].clone();
     this.leftMonitor.material = new THREE.MeshBasicMaterial({
-      map: this.resources.items.leftMonitorTexture,
+      map: this.resources.leftMonitorTexture,
     });
     this.scene.add(this.leftMonitor);
 
-    this.painting = this.resources.items.painting.scene.children[0];
+    this.painting = this.resources.painting.scene.children[0].clone();
     this.painting.material = new THREE.MeshBasicMaterial({
-      map: this.resources.items.paintingTexture,
+      map: this.resources.paintingTexture,
     });
     this.scene.add(this.painting);
   }
