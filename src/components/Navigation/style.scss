@@ -83,7 +83,7 @@
       border-radius: 10px;
       transition: background-color 0.3s;
 
-      a {
+      .navLink {
         color: $creame;
         text-decoration: none;
       }
@@ -93,7 +93,6 @@
         cursor: pointer;
       }
     }
-
     .active {
       background-color: $grey-darker;
     }
@@ -140,8 +139,10 @@
             color: $cyan-power;
           }
         }
+      }
 
-        .navLink.active {
+      .active {
+        .navLink {
           color: $cyan;
         }
       }
