@@ -59,21 +59,26 @@ if (isFoundedAssets) {
 }
 
 let myReq: number;
-let homeCanvas: HomeCanvas;
+let homeCanvas: HomeCanvas | null = new HomeCanvas(
+  document.querySelector(".canvas-home"),
+);
+
+const update = () => {
+  homeCanvas?.update();
+  myReq = requestAnimationFrame(update);
+};
+update();
 
 document.addEventListener("astro:page-load", () => {
-  if (window.location.pathname === "/") {
+  if (!homeCanvas && window.location.pathname === "/") {
     homeCanvas = new HomeCanvas(document.querySelector(".canvas-home"));
 
-    const update = () => {
-      homeCanvas.update();
-      myReq = requestAnimationFrame(update);
-    };
     update();
   }
 });
 
 document.addEventListener("astro:after-swap", () => {
   cancelAnimationFrame(myReq);
-  homeCanvas.destroy();
+  homeCanvas?.destroy();
+  homeCanvas = null;
 });
