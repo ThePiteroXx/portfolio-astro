@@ -1,0 +1,43 @@
+@media (min-width: 2000px) {
+    .about {
+     
+        &__content {
+            margin: 0 2em;
+
+            &__portret {
+                width: 14vh;
+                height: 14vh;
+            }
+
+            &__info {
+                .text-info {
+                    font-size: 1.7vh;
+                }
+            }
+
+            &__text {
+                font-size: 2.2vh;
+            }
+
+            &__skill {
+
+                li {
+                    font-size: 1.5vh;
+
+                    &::before {
+                        width: 0.7vh;
+                        height: 0.7vh;
+                    }
+                }
+
+                &-heading {
+                    margin-bottom: 1.5em;
+                    font-size: 2.2vh;
+                }
+            }
+
+
+        }
+    }
+
+}

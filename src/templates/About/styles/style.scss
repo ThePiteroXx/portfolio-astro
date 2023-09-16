@@ -1,0 +1,134 @@
+@import "~/styles/colors";
+
+.about {
+  padding-top: 9em;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: $creame;
+  background-color: $bgc-color;
+  overflow-x: hidden;
+
+  .canvas-about {
+    width: 100%;
+  }
+
+  &.is-visible {
+    overflow-y: scroll;
+  }
+
+  &__content {
+    margin: 0 auto;
+    max-width: 750px;
+    padding: 1em 3em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__info {
+      margin: 1.3em 0.5em;
+      display: flex;
+      align-items: center;
+      align-self: flex-start;
+
+      .text-info {
+        margin-left: 1.5em;
+        font-size: 1.6rem;
+        width: 50%;
+        color: rgb(150, 150, 150);
+      }
+    }
+
+    &__portret {
+      position: relative;
+      width: 100px;
+      height: 100px;
+
+      .img {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        width: 100%;
+        border-radius: 50%;
+        transform: rotateZ(-8deg);
+        z-index: 2;
+      }
+      .border {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        content: "";
+        width: 100%;
+        height: 100%;
+        border: 3px solid $cyan;
+        border-radius: 50%;
+        background-color: transparent;
+        z-index: 1;
+      }
+    }
+
+    &__text {
+      margin-top: 0.6em;
+      letter-spacing: 0.5px;
+      font-size: 1.8rem;
+      align-self: flex-start;
+
+      a {
+        color: $cyan;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+
+    &__skill {
+      margin-top: 1em;
+      padding: 0 2em;
+      align-self: center;
+      width: 100%;
+      max-width: 550px;
+
+      &-heading {
+        margin: 1em 0 0.5em;
+        font-size: 2rem;
+        color: $green;
+        text-align: center;
+      }
+
+      &-list {
+        margin: 3em auto;
+        padding: 0;
+        display: flex;
+        gap: 1.5em;
+        flex-direction: column;
+        flex-wrap: wrap;
+        max-width: 400px;
+        max-height: 250px;
+        list-style: none;
+
+        li {
+          display: flex;
+          gap: 1.2em;
+          align-items: center;
+          font-size: 1.5rem;
+          font-family: "Calibre";
+
+          &::before {
+            margin-top: -0.25em;
+            content: "";
+            width: 5px;
+            height: 5px;
+            border: 1px solid $cyan;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@import "./small";
+@import "./desktop";

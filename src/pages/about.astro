@@ -2,7 +2,7 @@
 import { ViewTransitions } from "astro:transitions";
 
 import GlobalStyles from "~/components/GlobalStyles.astro";
-import Navigation from "~/components/Navigation/Navigation.astro";
+import AboutTemplate from "~/templates/About/about.astro";
 
 const { generator, site } = Astro;
 const image = new URL("social.jpg", site);
@@ -32,8 +32,8 @@ const description =
     <ViewTransitions />
   </head>
   <body
-    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+    class="bg-default text-default selection:bg-secondary h-full overflow-x-hidden text-base selection:text-white"
   >
-    <Navigation />
+    <AboutTemplate />
   </body>
 </html>

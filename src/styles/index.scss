@@ -48,6 +48,34 @@ main {
   overflow: hidden;
 }
 
+.heading {
+  position: relative;
+  font-family: "Calibre", sans-serif;
+  font-size: 5rem;
+  font-weight: 600;
+  color: $cyan;
+
+  &::before {
+    position: absolute;
+    top: 40%;
+    right: -80px;
+    content: "";
+    width: 70px;
+    height: 2px;
+    background-color: $creame;
+  }
+
+  &::after {
+    position: absolute;
+    top: 40%;
+    left: -80px;
+    content: "";
+    width: 70px;
+    height: 2px;
+    background-color: $creame;
+  }
+}
+
 .hidden {
   display: none;
 }
