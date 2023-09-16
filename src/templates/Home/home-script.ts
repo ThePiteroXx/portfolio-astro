@@ -3,9 +3,9 @@ import ledBakedImage from "~/assets/images/ledBaked.jpg";
 import bakedImage from "~/assets/images/baked.jpg";
 import leftMonitorImage from "~/assets/images/leftMonitor.jpg";
 import paintingImage from "~/assets/images/painting.png";
-
 import { updateResources } from "~/store/resources";
 import { loadAsset } from "~/utils/loadAsset";
+
 import HomeCanvas from "./canvas/Home.js";
 
 const assetPaths = [

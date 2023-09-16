@@ -93,6 +93,8 @@ export default class Home {
 
   destroy() {
     this.time.stop();
+    this.time.off("tick");
+    this.sizes.off("resize");
     this.renderer.destroy();
     this.world.destroy();
     this.scene = null;

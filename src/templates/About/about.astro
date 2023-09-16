@@ -1,8 +1,44 @@
 ---
+import portretImage from "~/assets/images/portret.jpg";
 import Navigation from "~/components/Navigation/Navigation.astro";
 
 import "./styles/style.scss";
 ---
+
+<script>
+  import { updateResources } from "~/store/resources";
+  import { loadAsset } from "~/utils/loadAsset";
+
+  import AboutCanvas from "./canvas/About";
+
+  const icons = await loadAsset("models/icons-final.glb");
+
+  icons && updateResources({ icons });
+
+  let myReq: number;
+  let aboutCanvas: AboutCanvas | null = new AboutCanvas(
+    document.querySelector(".canvas-about"),
+  );
+
+  const update = () => {
+    aboutCanvas?.update();
+    myReq = requestAnimationFrame(update);
+  };
+  update();
+
+  document.addEventListener("astro:page-load", () => {
+    if (!aboutCanvas && window.location.pathname === "/about") {
+      aboutCanvas = new AboutCanvas(document.querySelector(".canvas-about"));
+      update();
+    }
+  });
+
+  document.addEventListener("astro:after-swap", () => {
+    cancelAnimationFrame(myReq);
+    aboutCanvas?.destroy();
+    aboutCanvas = null;
+  });
+</script>
 
 <Navigation />
 <main>
@@ -12,7 +48,12 @@ import "./styles/style.scss";
       <div class="about__content__info" data-description="about">
         <div class="about__content__portret">
           <div class="border"></div>
-          <img src="../static/assets/portret.jpg" alt="myself" class="img" />
+          <img
+            src={portretImage.src}
+            alt="myself"
+            class="img"
+            loading="eager"
+          />
         </div>
         <p class="text-info">
           Hello! My name is Peter. I'm 20 years old and I enjoy creating

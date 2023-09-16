@@ -7,18 +7,18 @@ import "./style.scss";
     const navHamburger = document.querySelector("#navBtn");
     const navMobile = document.querySelector("#navMobile");
     const nav = document.querySelector(".navbar");
-    const navLi = nav.querySelectorAll(".navLi");
+    const navLi = nav?.querySelectorAll(".navLi");
     const currentUrl = window.location.href;
 
     //Show navigation of mobile
-    navHamburger.addEventListener("click", () => {
+    navHamburger?.addEventListener("click", () => {
       navHamburger.classList.toggle("active");
-      navMobile.classList.toggle("active");
+      navMobile?.classList.toggle("active");
     });
 
     // emphesize active link
-    navLi.forEach((li) => {
-      if (li.children[0].href === currentUrl) {
+    navLi?.forEach((li) => {
+      if ((li.children[0] as HTMLAnchorElement).href === currentUrl) {
         li.classList.add("active");
       }
     });
