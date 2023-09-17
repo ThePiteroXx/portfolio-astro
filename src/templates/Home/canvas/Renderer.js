@@ -12,8 +12,6 @@ export default class Renderer {
     this.scene = home.scene;
     this.camera = home.camera;
 
-    this.usePostprocess = false;
-
     this.setInstance();
   }
 
@@ -54,11 +52,7 @@ export default class Renderer {
       this.stats.beforeRender();
     }
 
-    if (this.usePostprocess) {
-      this.postProcess.composer.render();
-    } else {
-      this.instance.render(this.scene, this.camera.instance);
-    }
+    this.instance.render(this.scene, this.camera.instance);
 
     if (this.stats) {
       this.stats.afterRender();

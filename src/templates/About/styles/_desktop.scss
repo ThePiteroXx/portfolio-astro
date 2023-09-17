@@ -1,40 +1,37 @@
 @media (min-width: 1400px) {
-    .about {
-
-        &.is-visible{
-            overflow-y: auto;
-        }
-
-        .canvas-about {
-            position: fixed;
-            top: 0;
-            right: 10px;
-            width: 50%;
-        }
-
-        &__content {
-            margin: 0 1.9em;
-            width: 50%;
-
-            &__skill {
-                flex-direction: column;
-            }
-        }
-
+  .about {
+    &.is-visible {
+      overflow-y: auto;
     }
 
+    .canvas-about {
+      position: fixed;
+      top: 0;
+      right: 10px;
+      width: 50%;
+    }
+
+    &__content {
+      margin: 0 1.9em;
+      width: 50%;
+
+      &__skill {
+        flex-direction: column;
+      }
+    }
+  }
 }
 
 @media (min-width: 1600px) {
-    .about {
-        &__content {
-            &__skill {
-                flex-direction: row;
+  .about {
+    &__content {
+      &__skill {
+        flex-direction: row;
 
-                &-list {
-                    max-width: 350px;
-                }
-            }
+        &-list {
+          max-width: 350px;
         }
+      }
     }
+  }
 }

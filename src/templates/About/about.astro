@@ -1,6 +1,5 @@
 ---
 import portretImage from "~/assets/images/portret.jpg";
-import Navigation from "~/components/Navigation/Navigation.astro";
 
 import "./styles/style.scss";
 ---
@@ -40,74 +39,66 @@ import "./styles/style.scss";
   });
 </script>
 
-<Navigation />
-<main>
-  <section class="about is-visible" id="about">
-    <div class="about__content">
-      <h2 class="heading" data-heading="about">About Me</h2>
-      <div class="about__content__info" data-description="about">
-        <div class="about__content__portret">
-          <div class="border"></div>
-          <img
-            src={portretImage.src}
-            alt="myself"
-            class="img"
-            loading="eager"
-          />
-        </div>
-        <p class="text-info">
-          Hello! My name is Peter. I'm 20 years old and I enjoy creating
-          websites and applications.
-        </p>
+<section class="about is-visible" id="about">
+  <div class="about__content">
+    <h2 class="heading" data-heading="about">About Me</h2>
+    <div class="about__content__info" data-description="about">
+      <div class="about__content__portret">
+        <div class="border"></div>
+        <img src={portretImage.src} alt="myself" class="img" loading="eager" />
       </div>
-      <p class="about__content__text" data-description="about">
-        My programming adventure started from february 2021 year. I learn new
-        things quickly and try to do everything precisely. I improve my skills
-        every day and I'm having a lot of fun with it. I'm very motivated to
-        learn more and gain experience.
+      <p class="text-info">
+        Hello! My name is Peter. I'm 20 years old and I enjoy creating websites
+        and applications.
       </p>
-      <p class="about__content__text" data-description="about">
-        In my spare time from coding, I have been training in the gym for about
-        5 years. I am a calm, patient person who strives to achieve its goals.
-      </p>
-      <p class="about__content__text" data-description="about">
-        If you wanna know more about me write me <a
-          href="#contact"
-          data-href="contact">contact</a
-        >
-      </p>
-      <p class="about__content__text" data-description="about">
-        Here are some of the technologies I have worked with up to this moment:
-      </p>
+    </div>
+    <p class="about__content__text" data-description="about">
+      My programming adventure started from february 2021 year. I learn new
+      things quickly and try to do everything precisely. I improve my skills
+      every day and I'm having a lot of fun with it. I'm very motivated to learn
+      more and gain experience.
+    </p>
+    <p class="about__content__text" data-description="about">
+      In my spare time from coding, I have been training in the gym for about 5
+      years. I am a calm, patient person who strives to achieve its goals.
+    </p>
+    <p class="about__content__text" data-description="about">
+      If you wanna know more about me write me <a
+        href="#contact"
+        data-href="contact">contact</a
+      >
+    </p>
+    <p class="about__content__text" data-description="about">
+      Here are some of the technologies I have worked with up to this moment:
+    </p>
 
-      <div class="about__content__skill" data-description="about">
-        <div class="about__content__skill-container">
-          <p class="about__content__skill-heading">Front-end:</p>
-          <ul class="about__content__skill-list">
-            <li>React</li>
-            <li>Gatsby</li>
-            <li>Next</li>
-            <li>Astro</li>
-            <li>Redux / Zustand</li>
-            <li>TypeScript</li>
-            <li>Three.js (WebGl)</li>
-            <li>Jest / RTL</li>
-            <li>Styled-components</li>
-            <li>Tailwind</li>
-            <li>Css modules</li>
-          </ul>
-        </div>
-        <div class="about__content__skill-container" data-description="about">
-          <p class="about__content__skill-heading">Back-end:</p>
-          <ul class="about__content__skill-list">
-            <li>Express</li>
-            <li>Firebase</li>
-            <li>Mongodb</li>
-          </ul>
-        </div>
+    <div class="about__content__skill" data-description="about">
+      <div class="about__content__skill-container">
+        <p class="about__content__skill-heading">Front-end:</p>
+        <ul class="about__content__skill-list">
+          <li>React</li>
+          <li>Gatsby</li>
+          <li>Next</li>
+          <li>Astro</li>
+          <li>Redux / Zustand</li>
+          <li>TypeScript</li>
+          <li>Three.js (WebGl)</li>
+          <li>Jest / RTL</li>
+          <li>Styled-components</li>
+          <li>Tailwind</li>
+          <li>Css modules</li>
+        </ul>
+      </div>
+      <div class="about__content__skill-container" data-description="about">
+        <p class="about__content__skill-heading">Back-end:</p>
+        <ul class="about__content__skill-list">
+          <li>Express</li>
+          <li>Firebase</li>
+          <li>Mongodb</li>
+        </ul>
       </div>
     </div>
+  </div>
 
-    <canvas class="canvas-about" data-canvas="about"></canvas>
-  </section>
-</main>
+  <canvas class="canvas-about" data-canvas="about"></canvas>
+</section>

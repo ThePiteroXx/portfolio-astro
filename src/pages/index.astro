@@ -1,39 +1,8 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-
-import GlobalStyles from "~/components/GlobalStyles.astro";
-import Home from "~/templates/Home/home.astro";
-
-const { generator, site } = Astro;
-const image = new URL("social.jpg", site);
-const description =
-  "Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.";
+import AppLayout from "~/layouts/AppLayout.astro";
+import HomeTemplate from "~/templates/Home/home.astro";
 ---
 
-<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <meta name="generator" content={generator} />
-
-    <title>Astro Landing Page</title>
-    <meta name="description" content={description} />
-
-    <!-- social media -->
-    <meta property="og:title" content="Astro" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:url" content={site} />
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <GlobalStyles />
-    <ViewTransitions />
-  </head>
-  <body
-    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
-  >
-    <Home />
-  </body>
-</html>
+<AppLayout>
+  <HomeTemplate />
+</AppLayout>

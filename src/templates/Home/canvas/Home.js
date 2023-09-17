@@ -71,11 +71,11 @@ export default class Home {
 
     this.camera.update();
 
-    if (this.world) this.world.update();
+    this.world.update();
 
-    if (this.renderer) this.renderer.update();
+    this.renderer.update();
 
-    if (this.navigation) this.navigation.update();
+    this.navigation.update();
   }
 
   resize() {
@@ -97,8 +97,8 @@ export default class Home {
     this.sizes.off("resize");
     this.renderer.destroy();
     this.world.destroy();
+    if (this.stats) this.stats.deactivate();
     this.scene = null;
     this.config = null;
-    this.stats = null;
   }
 }
