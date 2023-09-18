@@ -26,9 +26,9 @@ const assetPaths = [
 const assetPromises = assetPaths.map(loadAsset);
 const assets = await Promise.all(assetPromises);
 
-const isFoundedAssets = assets.every((asset) => asset !== undefined);
+const isFoundAssets = assets.every((asset) => asset !== undefined);
 
-if (isFoundedAssets) {
+if (isFoundAssets) {
   const [
     deskModel,
     mainMonitor,

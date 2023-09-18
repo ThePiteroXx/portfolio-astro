@@ -1,0 +1,98 @@
+---
+import "./styles/style.scss";
+---
+
+<script>
+  import portfolioImage from "~/assets/images/portfolio.jpg";
+  import messupImage from "~/assets/images/messup.jpg";
+  import dietappImage from "~/assets/images/dietapp.jpg";
+  import moviestanImage from "~/assets/images/moviestan.jpg";
+
+  import { updateResources } from "~/store/resources";
+  import { loadAsset } from "~/utils/loadAsset";
+
+  import WorkCanvas from "./canvas/Work.js";
+
+  const assetPaths = [
+    portfolioImage.src,
+    messupImage.src,
+    dietappImage.src,
+    moviestanImage.src,
+  ];
+
+  // load resources
+  const assetPromises = assetPaths.map(loadAsset);
+  const assets = await Promise.all(assetPromises);
+
+  const isFoundAssets = assets.every((asset) => asset !== undefined);
+
+  if (isFoundAssets) {
+    const [portfolio, messup, dietapp, moviestan] = assets as NonNullable<
+      (typeof assets)[number]
+    >[];
+
+    updateResources({
+      portfolio,
+      messup,
+      dietapp,
+      moviestan,
+    });
+  }
+
+  let myReq: number;
+  let workCanvas: WorkCanvas | null = new WorkCanvas(
+    document.querySelector(".canvas-work"),
+  );
+
+  const update = () => {
+    workCanvas?.update();
+    myReq = requestAnimationFrame(update);
+  };
+  update();
+
+  document.addEventListener("astro:page-load", () => {
+    if (!workCanvas && window.location.pathname === "/work") {
+      workCanvas = new WorkCanvas(document.querySelector(".canvas-work"));
+      update();
+    }
+  });
+
+  document.addEventListener("astro:after-swap", () => {
+    cancelAnimationFrame(myReq);
+    workCanvas?.destroy();
+    workCanvas = null;
+  });
+</script>
+
+<section class="work" id="work">
+  <canvas class="canvas-work" data-canvas="work"></canvas>
+  <div class="work__container">
+    <h2 class="work__container__heading heading" data-heading="work">
+      My works
+    </h2>
+    <div class="work__container__img-mainOptions"></div>
+  </div>
+</section>
+
+<template id="modal-temp">
+  <div class="modal">
+    <div class="modal__background"></div>
+    <div class="modal__container">
+      <button class="modal__exit">X</button>
+      <p class="modal__title"></p>
+      <p class="modal__mainDesc"></p>
+      <ul class="modal__technologies"></ul>
+      <img class="modal__img" alt="" />
+      <p class="modal__desc"></p>
+      <div class="modal__box"></div>
+      <div class="modal__btns">
+        <a class="modal__btn modal__btn--live" target="_blank" rel="noopener"
+          >Live</a
+        >
+        <a class="modal__btn modal__btn--code" target="_blank" rel="noopener"
+          >GitHub</a
+        >
+      </div>
+    </div>
+  </div>
+</template>
