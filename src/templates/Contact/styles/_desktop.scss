@@ -1,0 +1,42 @@
+@media (min-width: 1600px) {
+  .contact {
+    &__heading {
+      font-size: 6rem;
+    }
+
+    &__text {
+      font-size: 2.1rem;
+    }
+
+    &__form {
+      &__box {
+        width: 100%;
+      }
+    }
+
+    &__container--left {
+      width: 40%;
+    }
+
+    &__container--right {
+      width: 60%;
+      min-height: 730px;
+    }
+
+    &__input {
+      font-size: 1.8rem;
+    }
+
+    &__area {
+      font-size: 1.5rem;
+    }
+
+    &__btn {
+      width: 40%;
+    }
+
+    &__svg {
+      width: 40%;
+    }
+  }
+}

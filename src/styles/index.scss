@@ -75,19 +75,3 @@ main {
     background-color: $creame;
   }
 }
-
-.hidden {
-  display: none;
-}
-
-.is-visible {
-  pointer-events: all;
-}
-
-.success {
-  color: $success;
-}
-
-.error {
-  color: $error;
-}

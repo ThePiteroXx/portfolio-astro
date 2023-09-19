@@ -1,4 +1,3 @@
-import image from "@astrojs/image";
 import glslify from "vite-plugin-glslify";
 import { defineConfig } from "astro/config";
 
@@ -8,4 +7,5 @@ export default defineConfig({
   vite: {
     plugins: [glslify()],
   },
+  output: "server",
 });

@@ -1,0 +1,59 @@
+---
+import "./styles/style.scss";
+---
+
+<script src="./contact-script.ts"></script>
+
+<section class="contact" id="contact">
+  <div class="contact__container contact__container--left">
+    <h2 class="contact__heading" data-heading="contact">
+      Do you have any question?
+    </h2>
+    <p class="contact__text" data-description="contact">
+      I am open to various job offers and projects. If you have any questions
+      and requests - Fill out the form and write message to me.
+    </p>
+    <form class="contact__form" id="contact-form" data-description="contact">
+      <div class="contact__form__box">
+        <input
+          type="text"
+          name="from_name"
+          class="contact__input"
+          id="contact-name"
+          placeholder=" "
+        />
+        <label class="contact__label" for="contact-name">First name</label>
+      </div>
+      <div class="contact__form__box">
+        <input
+          type="email"
+          name="email"
+          class="contact__input"
+          id="contact-email"
+          placeholder=" "
+        />
+        <label class="contact__label" for="contact-email">Email</label>
+      </div>
+      <div class="contact__form__box">
+        <textarea
+          name="message"
+          class="contact__area"
+          id="contact-msg"
+          cols="30"
+          rows="10"
+          placeholder=" "></textarea>
+        <label class="contact__label" for="contact-msg">Message</label>
+      </div>
+      <p class="contact__form__communique" id="contact-communique"></p>
+      <button
+        type="submit"
+        name="contact-submit"
+        class="contact__btn"
+        id="contact-btn">Send Message</button
+      >
+    </form>
+  </div>
+  <div class="contact__container contact__container--right">
+    <div class="contact__container__mask"></div>
+  </div>
+</section>
