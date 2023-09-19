@@ -1,4 +1,11 @@
-# Rewriting my portfolio to astro framework in progres...
+# Rewriting my portfolio from pure js to astro framework
+
+TODO list:
+
+1. Rewrite project to astro ✅
+2. Refactor whole "Work" subpage ⌛
+3. Replace js files to ts ⌛
+4. Re-design app (use tailwind) ⌛
 
 ## Commands
 
@@ -12,4 +19,3 @@
 | `npm run astro --help` | Get help using the Astro CLI                      |
 | `npm run format`       | Format code with [Prettier](https://prettier.io/) |
 | `npm run clean`        | Remove `node_modules` and build output            |
-
